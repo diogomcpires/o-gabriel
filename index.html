@@ -407,12 +407,99 @@
     flex-shrink:0; width:42px; height:42px; border-radius:50%; background:rgba(239,227,200,.12);
     display:flex; align-items:center; justify-content:center; color:var(--brass);
   }
-  .info-item strong{display:block; font-family:var(--font-mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--brass); margin-bottom:.25rem;}
-  .info-item p, .info-item a{font-size:1rem; color:var(--paper-2);}
-  .info-item a:hover{color:var(--ember-light);}
-  .map-frame{border-radius:6px; overflow:hidden; border:1px solid rgba(239,227,200,.2); min-height:340px; background:var(--charcoal-2);}
-  .map-frame iframe{width:100%; height:100%; min-height:340px; border:0; filter:grayscale(.15) contrast(1.05);}
-  @media (max-width:860px){ .contact-grid{grid-template-columns:1fr;} .map-frame{order:-1;} }
+/* ================= SECÇÃO CONTACTOS E MAPA ================= */
+.contactos-section {
+  background-color: var(--azulejo);
+  color: var(--paper);
+  padding: 5rem 0;
+}
+
+.contactos-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem; /* Espaço entre o texto e o mapa */
+}
+
+/* Lado Esquerdo - Informações */
+.contactos-info {
+  flex: 1;
+}
+
+.contactos-info .eyebrow {
+  color: var(--brass);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.contactos-info h2 {
+  color: var(--paper);
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.info-item i {
+  color: var(--brass);
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+
+.info-item h4 {
+  font-family: var(--font-mono);
+  color: var(--brass);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.info-item p {
+  color: var(--paper-2);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.contactos-botoes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+/* Lado Direito - Mapa */
+.contactos-mapa {
+  flex: 1;
+}
+
+.contactos-mapa iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para Ecrãs Menores (Telemóveis) */
+@media (max-width: 860px) {
+  .contactos-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .contactos-info h2 {
+    font-size: 2.2rem;
+  }
+
+  .contactos-mapa iframe {
+    height: 350px;
+  }
+}
 
   /* ================= FOOTER ================= */
   footer{background:var(--charcoal); color:rgba(239,227,200,.6); padding:2.6rem 0;}
@@ -420,6 +507,7 @@
   .footer-inner .fname{font-family:var(--font-display); color:var(--paper-2); font-size:1.05rem;}
   footer .fine{font-family:var(--font-mono); font-size:.72rem; opacity:.7; max-width:60ch;}
   .footer-top{border-bottom:1px solid rgba(239,227,200,.1); padding-bottom:1.6rem; margin-bottom:1.4rem;}
+  
 </style>
 </head>
 <body>
@@ -824,45 +912,68 @@
   </div>
 </div>
   
-<!-- ================= CONTACT ================= -->
-<section class="contact" id="contactos">
+<!-- ================= CONTACTOS ================= -->
+<section class="contactos-section" id="contactos">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Encontre-nos</span>
-      <h2>Venha à brasa</h2>
-    </div>
-    <div class="contact-grid">
-      <div class="info-list reveal">
+    
+    <div class="contactos-container reveal">
+      
+      <!-- Metade Esquerda: Texto e Botões -->
+      <div class="contactos-info">
+        <span class="eyebrow">Encontre-nos</span>
+        <h2>Venha à brasa</h2>
+        
         <div class="info-item">
-          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <div><strong>Morada</strong><p>Av. Magalhães Coutinho 17, Loja C<br>2675-654 Odivelas</p></div>
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h4>Morada</h4>
+            <p>Av. Magalhães Coutinho 17, Loja C<br>2675-654 Odivelas</p>
+          </div>
         </div>
+
         <div class="info-item">
-          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-          <div><strong>Telefone</strong><a href="tel:+351219337667">21 933 7667</a></div>
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <h4>Telefone</h4>
+            <p><a href="tel:+351219337667">21 933 7667</a></p>
+          </div>
         </div>
+
         <div class="info-item">
-          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-          <div><strong>Horário</strong><p>Fecha às 22h00 — ligue para confirmar o horário completo da semana</p></div>
+          <i class="fa-regular fa-clock"></i>
+          <div>
+            <h4>Horário</h4>
+            <p>Fecha às 22h00 — ligue para confirmar o horário completo da semana</p>
+          </div>
         </div>
+
         <div class="info-item">
-          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
-          <div><strong>Serviço</strong><p>Sala, take-away e entrega ao domicílio</p></div>
+          <i class="fa-solid fa-bag-shopping"></i>
+          <div>
+            <h4>Serviço</h4>
+            <p>Sala, take-away e entrega ao domicílio</p>
+          </div>
         </div>
-        <div class="cta-row" style="margin-top:.5rem;">
+
+        <!-- Botões -->
+        <div class="contactos-botoes">
           <a href="tel:+351219337667" class="btn btn-ember">Ligar Agora</a>
           <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Magalh%C3%A3es+Coutinho+17,+2675-654+Odivelas" target="_blank" rel="noopener" class="btn btn-outline">Como Chegar</a>
         </div>
       </div>
-      <div class="map-frame reveal">
-        <iframe
-          src="https://maps.google.com/maps?q=Churrasqueira%20O%20Gabriel%2C%20Av.%20Magalh%C3%A3es%20Coutinho%2017%2C%20Odivelas&t=&z=16&ie=UTF8&iwloc=&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+
+      <!-- Metade Direita: Google Maps -->
+      <div class="contactos-mapa">
+        <iframe 
+          src="https://maps.google.com/maps?q=Churrasqueira%20O%20Gabriel%2C%20Av.%20Magalh%C3%A3es%20Coutinho%2017%2C%20Odivelas&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade" 
           title="Mapa — Churrasqueira O Gabriel, Odivelas">
         </iframe>
       </div>
+
     </div>
+    
   </div>
 </section>
 
