@@ -11,6 +11,53 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bevan&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+
+  .cartao-instagram {
+  background-color: var(--paper-2);
+  border: 2px dashed var(--brass); /* Borda tracejada dá um ar de "recado/menu especial" */
+  border-radius: 8px;
+  padding: 24px;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.instagram-icon {
+  font-size: 2.5rem;
+  color: var(--ember); /* Usa a tua cor quente para chamar a atenção */
+}
+
+.cartao-texto h3 {
+  color: var(--charcoal);
+  font-family: var(--font-display);
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.cartao-texto p {
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.btn-instagram {
+  background-color: var(--azulejo);
+  color: #ffffff;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-instagram:hover {
+  background-color: var(--azulejo-light);
+}
+  
   :root{
     --charcoal:#201810;  
     --charcoal-2:#2c2115;
@@ -40,7 +87,7 @@
   }
   img{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
-  ul{list-style:none;}
+  ul{list-:none;}
   section{scroll-margin-top:76px;}
   .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
   .eyebrow{
@@ -494,6 +541,17 @@
     </div>
   </div>
 </section>
+
+<div class="cartao-instagram">
+  <i class="fa-brands fa-instagram instagram-icon"></i>
+  <div class="cartao-texto">
+    <h3>As nossas especialidades mudam!</h3>
+    <p>Temos pratos novos todos os dias. Siga o nosso Instagram para não perder as novidades de hoje.</p>
+  </div>
+  <a href="LINK_DO_INSTAGRAM_AQUI" target="_blank" class="btn-instagram">
+    Ver Instagram
+  </a>
+</div>
 
 <!-- ================= EMENTA ================= -->
 <section class="menu-section" id="ementa">
