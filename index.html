@@ -105,8 +105,8 @@
     --ember-light:#FFC42E;
     --paper:#efe3c8;
     --paper-2:#f8f2e2;
-    --azulejo:#26576b;
-    --azulejo-light:#4c8398;
+    --azulejo:#7a1a22;       /* Bordô principal da fachada */
+    --azulejo-light:#9a232b; /* Bordô ligeiramente mais claro para os efeitos de rato */
     --brass:#b98b3e;
     --ink:#241b13;
     --ink-soft:#4a3c2c;
@@ -166,8 +166,9 @@
   /* ================= NAV ================= */
   header.nav{
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:rgba(32,24,16,.92); backdrop-filter:blur(6px);
-    border-bottom:1px solid rgba(185,139,62,.25);
+    background:rgba(90, 15, 20, 0.95); /* Bordô escuro translúcido */
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(242, 174, 0, 0.4); /* Fio amarelo para combinar */
   }
   .nav-inner{
     max-width:1120px; margin:0 auto; padding:0 24px;
@@ -344,7 +345,7 @@
   .combo-card{
     background:var(--azulejo); border-radius:6px; padding:1.9rem;
     background-image:
-      linear-gradient(rgba(38,87,107,.94), rgba(38,87,107,.94)),
+      linear-gradient(rgba(122,26,34,.94), rgba(122,26,34,.94)),
       repeating-linear-gradient(45deg, rgba(239,227,200,.05) 0 2px, transparent 2px 22px),
       repeating-linear-gradient(-45deg, rgba(239,227,200,.05) 0 2px, transparent 2px 22px);
     position:relative; overflow:hidden;
@@ -516,7 +517,7 @@
 }
 
   /* ================= FOOTER ================= */
-  footer{background:var(--charcoal); color:rgba(239,227,200,.6); padding:2.6rem 0;}
+  footer{background:var(--azulejo); color:rgba(239,227,200,.8); padding:2.6rem 0;}
   .footer-inner{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:center; font-size:.85rem;}
   .footer-inner .fname{font-family:var(--font-display); color:var(--paper-2); font-size:1.05rem;}
   footer .fine{font-family:var(--font-mono); font-size:.72rem; opacity:.7; max-width:60ch;}
@@ -755,7 +756,7 @@
       </div>
     </div>
 
-    <!-- Carnes & Pratos Caseiros -->
+    <!-- Pratos Carnes -->
     <div class="menu-panel" data-panel="caseiros">
       <div class="menu-cols">
         <div class="menu-row"><span class="name">Feijoada à transmontana</span><span class="leader"></span><span class="price">12,00 € <small>/kg</small></span></div>
@@ -776,7 +777,7 @@
       </div>
     </div>
 
-    <!-- Peixe & Marisco -->
+    <!-- Pratos Peixe -->
     <div class="menu-panel" data-panel="peixe">
       <div class="menu-cols">
         <div class="menu-row"><span class="name">Bacalhau à brás</span><span class="leader"></span><span class="price">12,00 € <small>/kg</small></span></div>
